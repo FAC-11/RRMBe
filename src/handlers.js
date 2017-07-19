@@ -30,7 +30,7 @@ const handleFile = (request, response, fileName) => {
     }
   });
 };
-
+// not yet tested (build front end)
 const handleSearch = (request, response) => {
   const searchTerm = request.url.split('/')[2];
   const searchResult = search.passwordFilter(searchTerm);
@@ -38,6 +38,7 @@ const handleSearch = (request, response) => {
   response.end(searchResult);
 };
 
+// needs to be written
 const handleOther = (request, response) => {
   const extension = request.url.split('.')[1];
   const extensionType = {
