@@ -1,7 +1,14 @@
-//see gitter:
-//https://github.com/foundersandcoders/modules-challenge/blob/solutions/src/server.js
-//gets the resquest and do stuff
-//it calls router
+const http = require('http');
+const router = require('./router');
+const search = require('./search');
 
-//on server start initialise password data structure --> maybe with a second argument
-//(a callback) in http.createserver (research needed, if stuck ask Zooey)
+const host = process.env.HOST || 'localhost';
+const port = process.env.PORT || 4000;
+
+const server = http.createServer(router);
+
+server.listen(port, () => {
+  search.loadArray();
+});
+
+console.log(`server running on: http://${host}:${port}`);
