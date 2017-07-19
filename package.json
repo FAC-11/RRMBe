@@ -1,0 +1,32 @@
+{
+  "name": "rrmbe",
+  "version": "1.0.0",
+  "description": "passwordschecker",
+  "main": "./public/index.html",
+  "scripts": {
+    "test": "node ./src/test.js | tap-spec",
+    "coverage": "istanbul cover ./src/test.js",
+    "nodemon": "nodemon ./src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FAC-11/RRMBe.git"
+  },
+  "keywords": [
+    "password",
+    "fac"
+  ],
+  "author": "rrmb",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FAC-11/RRMBe/issues"
+  },
+  "homepage": "https://github.com/FAC-11/RRMBe#readme",
+  "devDependencies": {
+    "eslint": "^4.2.0",
+    "istanbul": "^0.4.5",
+    "nodemon": "^1.11.0",
+    "tap-spec": "^4.1.1",
+    "tape": "^4.7.0"
+  }
+}
