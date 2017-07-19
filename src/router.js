@@ -2,7 +2,7 @@ const handler = require('./handlers.js');
 
 const router = (req, res) => {
   const url = req.url;
-
+  console.log('router received: ', req.url);
   if (url === '/') {
     handler.handleHomeRoute(req, res);
   } else if (url.indexOf('public') !== -1) {

@@ -9,12 +9,13 @@ const fs = require('fs');
 const search = require('./search');
 
 const handleHomeRoute = (request, response) => {
+  console.log('url passed to handleHomeRoute: ', request.url);
   const filePath = path.join(__dirname, '..', 'public', 'index.html');
   fs.readFile(filePath, (error, file) => {
     if (error) {
       console.log(error);
       response.writeHead(500, 'Content-Type: text/html');
-      response.end("Sorry, we've had a problem");
+      response.end('Sorry, we\'ve had a problem');
     } else {
       response.writeHead(200, 'Content-Type: text/html');
       response.end(file);
@@ -22,7 +23,8 @@ const handleHomeRoute = (request, response) => {
   });
 };
 
-const handlePublic = (request, response, url) => {
+const handlePublic = (request, response) => {
+  console.log('url passed to handlePublic: ', request.url);
   const extension = request.url.split('.')[1];
   const extensionType = {
     html: 'text/html',
@@ -64,8 +66,8 @@ const handleSearch = (request, response, url) => {
   });
 };
 
-const handleOther = (request, response, url) => {
-  const extension = url.split('.')[1];
+const handleOther = (request, response) => {
+  const extension = request.url.split('.')[1];
   const extensionType = {
     html: 'text/html',
     css: 'text/css',
