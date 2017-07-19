@@ -1,9 +1,9 @@
-const handlers = require('./handlers.js');
+const handlers = requestuire('./handlers.js');
 
-const router = (req, res) => {
-  const url = req.url;
+const router = (request, response) => {
+  const url = request.url;
 
-  const whitelist = {
+  const fileName = {
     '/': '/index.html',
     '/index.html': '/index.html',
     '/style.css': '/style.css',
@@ -11,12 +11,12 @@ const router = (req, res) => {
     '/request.js': '/request.js',
   }[url];
 
-  if (whitelist) {
-    handlers.handleFile(req, res);
+  if (fileName) {
+    handlers.handleFile(request, response, fileName);
   } else if (url.indexOf('search') !== -1) {
-    handlers.handleSearch(req, res);
+    handlers.handleSearch(request, response);
   } else {
-    handlers.handleOther(req, res);
+    handlers.handleOther(request, response);
   }
 };
 
