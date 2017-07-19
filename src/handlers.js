@@ -3,3 +3,5 @@
 //2. searches;
 
 // 3. response.end --> sets headers;
+
+module.exports = {"something": "something"};

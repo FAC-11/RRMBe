@@ -1,6 +1,17 @@
-//see this link
-//https://github.com/foundersandcoders/modules-challenge/blob/solutions/src/handler.js
+const handler = require('./handlers.js');
 
-//which handler function will be passing
+const router = (req, res) => {
+  const url = req.url;
 
-//routes --> go to handlers.js
+  if (url === '/') {
+    handler.handleHomeRoute(req, res);
+  } else if (url.indexOf('public') !== -1) {
+    handler.handlePublic(req, res);
+  } else if (url.indexOf('search') !== -1) {
+    handler.handleSearch(req, res);
+  } else {
+    handler.handleOther(req, res);
+  }
+};
+
+module.exports = router;

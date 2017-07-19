@@ -1,6 +1,6 @@
 module.exports = {
-    "extends": "airbnb-base",
-    "plugins": [
-        "import"
-    ]
+  extends: 'airbnb-base',
+  rules: {
+    'import/no-unresolved': 'off',
+  },
 };
