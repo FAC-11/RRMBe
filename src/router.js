@@ -1,16 +1,22 @@
-const handler = require('./handlers.js');
+const handlers = require('./handlers.js');
 
 const router = (req, res) => {
   const url = req.url;
-  console.log('router received: ', req.url);
-  if (url === '/') {
-    handler.handleHomeRoute(req, res);
-  } else if (url.indexOf('public') !== -1) {
-    handler.handlePublic(req, res);
+
+  const whitelist = {
+    '/': '/index.html',
+    '/index.html': '/index.html',
+    '/style.css': '/style.css',
+    '/index.js': '/index.js',
+    '/request.js': '/request.js',
+  }[url];
+
+  if (whitelist) {
+    handlers.handleFile(req, res);
   } else if (url.indexOf('search') !== -1) {
-    handler.handleSearch(req, res);
+    handlers.handleSearch(req, res);
   } else {
-    handler.handleOther(req, res);
+    handlers.handleOther(req, res);
   }
 };
 
