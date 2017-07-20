@@ -5,6 +5,7 @@
   var passwordString = '';
 
   var renderDOM = function (error, result) {
+    console.log('renderDOM is running')
     if (error) {
       messageBoard.appendChild(result);
     } else {
