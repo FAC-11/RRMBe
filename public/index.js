@@ -1,26 +1,26 @@
 (function () {
-  var searchInput = document.getElementsByName('search-input')[0];
-  var dataList = document.getElementById('password-examples');
-  var messageBoard = document.getElementById('messages');
+  const searchInput = document.getElementsByName('search-input')[0];
+  const dataList = document.getElementById('password-examples');
+  const messageBoard = document.getElementById('messages');
 
-  var renderDOM = function (error, result) {
-    console.log('renderDOM is running')
+  const renderDOM = function (error, result) {
+    dataList.innerHTML = '';
     if (error) {
       messageBoard.appendChild(result);
     } else {
-      var responseArray = result.split(',');
-      responseArray.forEach(function (password) {
-        var passwordExample = document.createElement('option');
-        var passwordText = document.createTextNode(password);
+      const responseArray = result.split(',');
+      responseArray.forEach((password) => {
+        const passwordExample = document.createElement('option');
+        const passwordText = document.createTextNode(password);
         passwordExample.appendChild(passwordText);
         dataList.appendChild(passwordExample);
       });
     }
   };
 
-  searchInput.addEventListener('keyup', function (e) {
-    var passwordString = '';
-    passwordString = '/search/' + encodeURIComponent(e.target.value);
+  searchInput.addEventListener('keyup', (e) => {
+    let passwordString = '';
+    passwordString = `/search/${encodeURIComponent(e.target.value)}`;
     serverRequest(passwordString, renderDOM);
   });
-})();
+}());
