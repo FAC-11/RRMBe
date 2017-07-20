@@ -1,6 +1,7 @@
 body {
+<<<<<<< HEAD
   text-align: center;
-  background-color: #343434;
+  background: url("/binary.jpg") #343434;
   color: white;
   font-family: 'Zilla Slab', sans-serif;
 }
