@@ -1,24 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="/style.css">
-    <link rel="shortcut icon" href="/favicon.ico">
-    <title>RRMba Password Checker</title>
-  </head>
-  <body>
-<form id='passwordForm'>
-  <label>Start typing to find out how easy to crack your password is:
-  <input list="password-examples" name="search-input" aria-label="Type in your potential password here" />
-  </label>
 
-    <datalist id="password-examples">
-    </datalist>
-    <button type="submit">Check password</button>
-  </form>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Zilla+Slab" rel="stylesheet">
 
-  <section id="messages"></section>
+  <title>letme.in</title>
+</head>
 
+<body>
+  <main>
+    <h1>letme.in</h1>
+    <form id='passwordForm'>
+      <label for="password-input">Start typing to find out guessable your password is:</label>
+      <input list="password-examples" id="password-input" name="search-input" aria-label="Type in a potential password here" />
+
+      <datalist id="password-examples">
+      </datalist>
+      <button type="submit">Check password</button>
+    </form>
+
+    <section id="messages"></section>
+  </main>
   <script src="/request.js"></script>
   <script src="/index.js"></script>
 </body>
