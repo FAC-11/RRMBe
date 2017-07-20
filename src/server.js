@@ -7,9 +7,8 @@ const port = process.env.PORT || 4000;
 
 const server = http.createServer(router);
 
-// server.listen(port, () => {
-//   search.loadArray();
-// });
-server.listen(port);
+server.listen(port, () => {
+  search.loadArray();
+});
 
 console.log(`server running on: http://${host}:${port}`);
