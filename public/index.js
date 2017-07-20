@@ -2,7 +2,6 @@
   var searchInput = document.getElementsByName('search-input')[0];
   var dataList = document.getElementById('password-examples');
   var messageBoard = document.getElementById('messages');
-  var passwordString = '';
 
   var renderDOM = function (error, result) {
     console.log('renderDOM is running')
@@ -20,6 +19,7 @@
   };
 
   searchInput.addEventListener('keyup', function (e) {
+    var passwordString = '';
     passwordString = '/search/' + encodeURIComponent(e.target.value);
     serverRequest(passwordString, renderDOM);
   });
