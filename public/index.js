@@ -1,17 +1,17 @@
 (function () {
-  const searchInput = document.getElementsByName('search-input')[0];
-  const dataList = document.getElementById('password-examples');
-  const messageBoard = document.getElementById('messages');
+  var searchInput = document.getElementsByName('search-input')[0];
+  var dataList = document.getElementById('password-examples');
+  var messageBoard = document.getElementById('messages');
 
-  const renderDOM = function (error, result) {
+  var renderDOM = function (error, result) {
     dataList.innerHTML = '';
     if (error) {
       messageBoard.appendChild(result);
     } else {
-      const responseArray = result.split(',');
+      var responseArray = result.split(',');
       responseArray.forEach((password) => {
-        const passwordExample = document.createElement('option');
-        const passwordText = document.createTextNode(password);
+        var passwordExample = document.createElement('option');
+        var passwordText = document.createTextNode(password);
         passwordExample.appendChild(passwordText);
         dataList.appendChild(passwordExample);
       });
