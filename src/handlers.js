@@ -9,8 +9,6 @@ const fs = require('fs');
 const search = require('./search');
 
 const handleFile = (request, response, fileName) => {
-  console.log('url passed to handleFile: ', request.url);
-  console.log('fileName passed to handleFile: ', fileName);
   const filePath = path.join(__dirname, '..', 'public', fileName);
   const extension = fileName.split('.')[1];
   const extensionType = {
@@ -32,7 +30,8 @@ const handleFile = (request, response, fileName) => {
 };
 // not yet tested (build front end)
 const handleSearch = (request, response) => {
-  const searchTerm = request.url.split('/')[2];
+  const reg = /\/search\//;
+  const searchTerm = decodeURIComponent(request.url.replace(reg, ''));
   const searchResult = search.getPasswords(searchTerm);
   response.writeHead(200, { 'Content-Type': 'text/html' });
   response.end(searchResult);
