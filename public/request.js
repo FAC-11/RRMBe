@@ -1,5 +1,5 @@
 function serverRequest(url, cb) {
-  const xhr = new XMLHttpRequest();
+  var xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function () {
     if (xhr.readyState === 4) {
       if (xhr.status === 200) {
