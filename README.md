@@ -33,8 +33,8 @@ After all the cyber attacks that have happened recently, we believe we should pr
 2. Src
 * Handlers.js
 * Router.js
-* Search.js
-* Server.js: In this file, we filter our PasswordsArray by the input introduced by the user.
+* Search.js: In this file, we filter our PasswordsArray by the input introduced by the user.
+* Server.js
 * Test.js: We test our pure function.
 
 
@@ -63,4 +63,4 @@ To run this project on your local server, run...
 ## Useful Links
 * [Heroku](https://github.com/FAC-11/research/blob/master/week4/Deployment.md)  
 * [Linter-eslint](https://atom.io/packages/linter-eslint)  
-* 
+*
