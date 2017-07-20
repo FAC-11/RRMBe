@@ -9,7 +9,7 @@
       messageBoard.appendChild(result);
     } else {
       var responseArray = result.split(',');
-      responseArray.forEach((password) => {
+      responseArray.forEach(function(password) {
         var passwordExample = document.createElement('option');
         var passwordText = document.createTextNode(password);
         passwordExample.appendChild(passwordText);
@@ -18,7 +18,7 @@
     }
   };
 
-  searchInput.addEventListener('keyup', (e) => {
+  searchInput.addEventListener('keyup', function(e) {
     let passwordString = '';
     passwordString = `/search/${encodeURIComponent(e.target.value)}`;
     serverRequest(passwordString, renderDOM);
