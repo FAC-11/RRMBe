@@ -13,11 +13,6 @@ const loadArray = () => {
   });
 };
 
-// const passwordFilter = (array, input) => {
-//   const newPasswords = array.filter(passwordString =>
-//     passwordString.slice(0, input.length) === input);
-//   return newPasswords.join(',');
-// };
 const passwordFilter = (array, input) => {
   const newPasswords = [];
   for (let i = 0; i < array.length; i++) {
@@ -32,7 +27,6 @@ const passwordFilter = (array, input) => {
 };
 
 const getPasswords = input => passwordFilter(passwordsArray, input);
-
 
 module.exports = {
   getPasswords,
