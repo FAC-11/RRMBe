@@ -19,7 +19,6 @@ const handleFile = (request, response, fileName) => {
   };
   fs.readFile(filePath, (error, file) => {
     if (error) {
-      console.log(error);
       response.writeHead(500, { 'Content-Type': 'text/html' });
       response.end('Sorry, we\'ve had a problem');
     } else {

@@ -3,14 +3,19 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="/style.css">
+    <link rel="shortcut icon" href="/favicon.ico">
     <title></title>
   </head>
   <body>
-<!-- workout the input for the html form -->
-    <form class="" action="index.html" method="post">
-      <input type="text" name="" value="">
+    
+  <label>Start typing to find out how easy to crack your password is:
+  <input list="password-examples" name="search-input" aria-label="Type in a potential password here" />
+  </label>
 
-    </form>
+  <datalist id="password-examples">
+  </datalist>
+
+  <section id="messages"></section>
 
   <script src="/request.js"></script>
   <script src="/index.js"></script>

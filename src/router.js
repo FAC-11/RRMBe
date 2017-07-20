@@ -2,7 +2,6 @@ const handlers = require('./handlers.js');
 
 const router = (request, response) => {
   const url = request.url;
-
   const fileName = {
     '/': '/index.html',
     '/index.html': '/index.html',
