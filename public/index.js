@@ -27,20 +27,29 @@
 
   form.addEventListener('submit', function (e) {
     e.preventDefault();
-    console.log(document.getElementById('password-examples'));
+    var options = document.getElementById('password-examples').childNodes;
     var heading = document.createElement('h2');
-    var headingText = document.createTextNode('WARNING!');
     var passwordTry = e.target["0"].form["0"].value;
-    // if(passwordTry === document.getElementById('password-examples')){
-    //   console.log(yay!);
-    // }
-    var text = document.createTextNode('We are sorry but ' + passwordTry + ' is one of the top 1000 used passwords. Try something else!')
-    while(messageBoard.hasChildNodes()){
-      messageBoard.removeChild(messageBoard.lastChild);
-    }
-    heading.appendChild(headingText);
-    messageBoard.appendChild(heading);
-    messageBoard.appendChild(text);
-  })
 
+    if(!(options[0].value)){
+      var headingText = document.createTextNode('Good News!');
+      var text = document.createTextNode('Your password ' + passwordTry + ' is not one of the top 1000 used passwords. Remember to make sure your password is difficult to guess!')
+      while(messageBoard.hasChildNodes()){
+        messageBoard.removeChild(messageBoard.lastChild);
+      }
+      heading.appendChild(headingText);
+      messageBoard.appendChild(heading);
+      messageBoard.appendChild(text);
+
+    } else{
+      var headingText = document.createTextNode('WARNING!');
+      var text = document.createTextNode('We are sorry but ' + passwordTry + ' is one of the top 1000 used passwords. Try something else!')
+      while(messageBoard.hasChildNodes()){
+        messageBoard.removeChild(messageBoard.lastChild);
+      }
+      heading.appendChild(headingText);
+      messageBoard.appendChild(heading);
+      messageBoard.appendChild(text);
+    }
+  });
 })();
