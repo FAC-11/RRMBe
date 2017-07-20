@@ -32,13 +32,17 @@ const handleFile = (request, response, fileName) => {
 };
 // not yet tested (build front end)
 const handleSearch = (request, response) => {
-  const searchTerm = request.url.split('/')[2];
+  const reg = /\/search\//;
+  const searchTerm = decodeURIComponent(request.url.replace(reg, ''));
+  console.log('searchTerm', searchTerm);
   const searchResult = search.getPasswords(searchTerm);
+  console.log('searchResult', searchResult);
   response.writeHead(200, { 'Content-Type': 'text/html' });
   response.end(searchResult);
 };
 
 const handleOther = (request, response) => {
+  console.log('other response');
   response.writeHead(404, { 'Content-Type': 'text/html' });
   response.end('Sorry, not found');
 };
