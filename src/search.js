@@ -14,13 +14,19 @@ const loadArray = () => {
 };
 
 const passwordFilter = (array, input) => {
-  const newPasswords = array.filter(passwordString =>
-    passwordString.slice(0, input.length) === input);
+  const newPasswords = [];
+  for (let i = 0; i < array.length; i++) {
+    if (array[i].slice(0, input.length) === input) {
+      newPasswords.push(array[i]);
+    }
+    if (newPasswords.length >= 5) {
+      break;
+    }
+  }
   return newPasswords.join(',');
 };
 
 const getPasswords = input => passwordFilter(passwordsArray, input);
-
 
 module.exports = {
   getPasswords,
