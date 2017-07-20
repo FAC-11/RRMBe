@@ -14,6 +14,7 @@ const loadArray = () => {
 };
 
 const passwordFilter = (array, input) => {
+  console.log(array, input, array.length);
   const newPasswords = [];
   for (let i = 0; i < array.length; i++) {
     if (array[i].slice(0, input.length) === input) {
