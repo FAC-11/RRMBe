@@ -20,7 +20,6 @@
 
   searchInput.addEventListener('keyup', function (e) {
     passwordString = '/search/' + encodeURIComponent(e.target.value);
-
     serverRequest(passwordString, renderDOM);
   });
 })();
