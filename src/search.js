@@ -4,7 +4,7 @@ const fs = require('fs');
 let top100kArray = [];
 
 const loadArray = () => {
-  top100kArray = fs.readFileSync(`${__dirname}/top1000Passwords.txt`, 'utf8').split('\n');
+  top100kArray = fs.readFileSync(`${__dirname}/top100kPasswords.txt`, 'utf8').split('\n');
 };
 
 const passwordFilter = (array, input) => {
