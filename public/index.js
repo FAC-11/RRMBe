@@ -4,7 +4,7 @@
   var passwordString = '';
   var renderDOM = function (err, res) {
     if (err) {
-
+      
     }
   }
 
