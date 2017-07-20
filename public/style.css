@@ -1,21 +1,47 @@
 body {
   text-align: center;
   background-color: #343434;
-  color: green;
+  color: white;
   font-family: 'Zilla Slab', sans-serif;
 }
 
 main {
   max-width: 900px;
   background-color: black;
-  margin: auto;
-  height: 100%;
+  padding: 2rem;
+  margin: 0 auto;
 }
 
 h1 {
   color: white;
   font-size: 3rem;
 
+}
+
+h2 {
+  font-size: 7rem;
+}
+
+.h2--red {
+  color: red;
+}
+
+.h2--green {
+  color: green;
+}
+
+
+.input--red {
+  background-color: red;
+}
+
+.input--orange {
+  color: #ffbf00;
+}
+
+
+.input--green {
+  background-color: green;
 }
 
 label {
@@ -28,4 +54,22 @@ input {
   font-size: 4rem;
   background-color: black;
   color: white;
+  border-color: white;
+  border-width: thin;
+}
+
+button {
+  font-size: 2rem;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  border-radius: 1rem;
+  font-family: 'Zilla Slab', sans-serif;
+  background-color: #25609D;
+  color: white;
+  border-style: none;
+
+}
+
+p {
+  font-size: 2rem;
 }

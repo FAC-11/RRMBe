@@ -16,6 +16,11 @@
         passwordExample.appendChild(passwordText);
         dataList.appendChild(passwordExample);
       });
+      if (dataList.childNodes[0].value) {
+        searchInput.setAttribute('class', 'input--red');
+      } else {
+        searchInput.setAttribute('class', 'input--green');
+      }
     }
   };
 
@@ -33,23 +38,30 @@
 
     if(!(options[0].value)){
       var headingText = document.createTextNode('Good News!');
-      var text = document.createTextNode('Your password ' + passwordTry + ' is not one of the top 100,000 used passwords. Remember to make sure your password is difficult to guess!')
+      var textP = document.createElement('p');
+      var text = document.createTextNode('Your password ' + passwordTry + ' is not one of the top 100,000 used passwords. Remember to make sure your password is difficult to guess!');
+      heading.setAttribute('class', 'h2--green');
       while(messageBoard.hasChildNodes()){
         messageBoard.removeChild(messageBoard.lastChild);
       }
       heading.appendChild(headingText);
       messageBoard.appendChild(heading);
-      messageBoard.appendChild(text);
+      textP.appendChild(text);
+      messageBoard.appendChild(textP);
+
 
     } else{
       var headingText = document.createTextNode('WARNING!');
+      var textP = document.createElement('p');
       var text = document.createTextNode('We are sorry but ' + passwordTry + ' is one of the top 100,000 used passwords. Try something else!')
+      heading.setAttribute('class', 'h2--red');
       while(messageBoard.hasChildNodes()){
         messageBoard.removeChild(messageBoard.lastChild);
       }
       heading.appendChild(headingText);
+      textP.appendChild(text);
       messageBoard.appendChild(heading);
-      messageBoard.appendChild(text);
+      messageBoard.appendChild(textP);
     }
   });
 })();
