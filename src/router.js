@@ -8,6 +8,7 @@ const router = (request, response) => {
     '/style.css': '/style.css',
     '/index.js': '/index.js',
     '/request.js': '/request.js',
+    '/binary.jpg': '/binary.jpg',
   }[url];
 
   if (fileName) {
