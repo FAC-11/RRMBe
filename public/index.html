@@ -1,23 +1,29 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="/style.css">
-    <link rel="shortcut icon" href="/favicon.ico">
-    <title></title>
-  </head>
-  <body>
-    
-  <label>Start typing to find out how easy to crack your password is:
-  <input list="password-examples" name="search-input" aria-label="Type in a potential password here" />
-  </label>
 
-  <datalist id="password-examples">
-  </datalist>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title></title>
+</head>
+
+<body>
+
+  <form id="passwordForm">
+    <label>Start typing to find out how easy to crack your password is:
+  <input list="password-examples" name="search-input" aria-label="Type in a potential password here" />
+    </label>
+
+    <datalist id="password-examples">
+    </datalist>
+    <button type="submit">Check password</button>
+  </form>
 
   <section id="messages"></section>
 
   <script src="/request.js"></script>
   <script src="/index.js"></script>
-  </body>
+</body>
+
 </html>
