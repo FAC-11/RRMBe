@@ -19,8 +19,8 @@
   };
 
   searchInput.addEventListener('keyup', function(e) {
-    let passwordString = '';
-    passwordString = `/search/${encodeURIComponent(e.target.value)}`;
+    var passwordString = '';
+    passwordString = '/search/' + encodeURIComponent(e.target.value);
     serverRequest(passwordString, renderDOM);
   });
 }());
