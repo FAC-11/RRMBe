@@ -1,4 +1,4 @@
-const handlers = requestuire('./handlers.js');
+const handlers = require('./handlers.js');
 
 const router = (request, response) => {
   const url = request.url;
