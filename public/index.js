@@ -4,12 +4,12 @@
   var messageBoard = document.getElementById('messages');
 
   var renderDOM = function (error, result) {
-    console.log('renderDOM is running')
+    dataList.innerHTML = '';
     if (error) {
       messageBoard.appendChild(result);
     } else {
       var responseArray = result.split(',');
-      responseArray.forEach(function (password) {
+      responseArray.forEach(function(password) {
         var passwordExample = document.createElement('option');
         var passwordText = document.createTextNode(password);
         passwordExample.appendChild(passwordText);
@@ -18,9 +18,9 @@
     }
   };
 
-  searchInput.addEventListener('keyup', function (e) {
+  searchInput.addEventListener('keyup', function(e) {
     var passwordString = '';
     passwordString = '/search/' + encodeURIComponent(e.target.value);
     serverRequest(passwordString, renderDOM);
   });
-})();
+}());
