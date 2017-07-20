@@ -1,16 +1,22 @@
-const handler = require('./handlers.js');
+const handlers = require('./handlers.js');
 
-const router = (req, res) => {
-  const url = req.url;
+const router = (request, response) => {
+  const url = request.url;
 
-  if (url === '/') {
-    handler.handleHomeRoute(req, res);
-  } else if (url.indexOf('public') !== -1) {
-    handler.handlePublic(req, res);
+  const fileName = {
+    '/': '/index.html',
+    '/index.html': '/index.html',
+    '/style.css': '/style.css',
+    '/index.js': '/index.js',
+    '/request.js': '/request.js',
+  }[url];
+
+  if (fileName) {
+    handlers.handleFile(request, response, fileName);
   } else if (url.indexOf('search') !== -1) {
-    handler.handleSearch(req, res);
+    handlers.handleSearch(request, response);
   } else {
-    handler.handleOther(req, res);
+    handlers.handleOther(request, response);
   }
 };
 
