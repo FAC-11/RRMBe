@@ -1,0 +1,31 @@
+body {
+  text-align: center;
+  background-color: #343434;
+  color: green;
+  font-family: 'Zilla Slab', sans-serif;
+}
+
+main {
+  max-width: 900px;
+  background-color: black;
+  margin: auto;
+  height: 100%;
+}
+
+h1 {
+  color: white;
+  font-size: 3rem;
+
+}
+
+label {
+  font-size: 1.5rem;
+}
+input {
+  display: block;
+  margin: 3% auto;
+  width: 90%;
+  font-size: 4rem;
+  background-color: black;
+  color: white;
+}

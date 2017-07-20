@@ -1,22 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="/style.css">
     <link rel="shortcut icon" href="public/favicon.ico">
-    <title></title>
+    <link href="https://fonts.googleapis.com/css?family=Zilla+Slab" rel="stylesheet">
+    <title>letme.in</title>
   </head>
   <body>
-
-  <label>Start typing to find out how easy to crack your password is:
-  <input list="password-examples" name="search-input" aria-label="Type in a potential password here" />
-  </label>
+  <main>
+    <h1>letme.in</h1>
+  <label for="password-input">Start typing to find out guessable your password is:</label>
+  <input list="password-examples" id="password-input" name="search-input" aria-label="Type in a potential password here" />
 
   <datalist id="password-examples">
   </datalist>
 
   <section id="messages"></section>
-
+</main>
   <script src="/request.js"></script>
   <script src="/index.js"></script>
   </body>
