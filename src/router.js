@@ -12,11 +12,11 @@ const router = (request, response) => {
   }[url];
 
   if (fileName) {
-    handlers.handleFile(request, response, fileName);
+    handlers.handleFile(response, fileName);
   } else if (url.indexOf('search') !== -1) {
     handlers.handleSearch(request, response);
   } else {
-    handlers.handleOther(request, response);
+    handlers.handleOther(response);
   }
 };
 

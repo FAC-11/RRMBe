@@ -1,14 +1,8 @@
-// two request handlers:
-// 1. onload;
-// 2. searches;
-
-// 3. response.end --> sets headers;
-
 const path = require('path');
 const fs = require('fs');
 const search = require('./search');
 
-const handleFile = (request, response, fileName) => {
+const handleFile = (response, fileName) => {
   const filePath = path.join(__dirname, '..', 'public', fileName);
   const extension = fileName.split('.')[1];
   const extensionType = {
@@ -28,16 +22,15 @@ const handleFile = (request, response, fileName) => {
     }
   });
 };
-// not yet tested (build front end)
+
 const handleSearch = (request, response) => {
-  const reg = /\/search\//;
-  const searchTerm = decodeURIComponent(request.url.replace(reg, ''));
+  const searchTerm = decodeURIComponent(request.url.replace('/search/', ''));
   const searchResult = search.getPasswords(searchTerm);
   response.writeHead(200, { 'Content-Type': 'text/html' });
   response.end(searchResult);
 };
 
-const handleOther = (request, response) => {
+const handleOther = (response) => {
   response.writeHead(404, { 'Content-Type': 'text/html' });
   response.end('Sorry, not found');
 };
