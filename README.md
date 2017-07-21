@@ -17,7 +17,7 @@ After all the cyber attacks that have happened recently, we believe we should pr
 
 ### Software Architecture
 
-[Our Architecture](https://github.com/FAC-11/RRMBe/blob/master/readme-images/IMG_2948.jpg?raw=true![](https://i.imgur.com/doH7X2y.jpg))
+![Our Architecture](https://user-images.githubusercontent.com/23265724/28459709-81d9a04c-6e06-11e7-9eae-f36254f14729.jpg)
 
 ### File structure
 
