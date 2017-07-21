@@ -24,8 +24,7 @@ const handleFile = (response, fileName) => {
 };
 
 const handleSearch = (request, response) => {
-  const reg = /\/search\//;
-  const searchTerm = decodeURIComponent(request.url.replace(reg, ''));
+  const searchTerm = decodeURIComponent(request.url.replace('/search/', ''));
   const searchResult = search.getPasswords(searchTerm);
   response.writeHead(200, { 'Content-Type': 'text/html' });
   response.end(searchResult);
