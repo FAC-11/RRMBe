@@ -54,7 +54,7 @@ After all the cyber attacks that have happened recently, we believe we should pr
 To run this project on your local server, run...
 >`git clone https://github.com/FAC-11/RRMBe.git`
 >`cd RRMBe`
->`npm init`
+>`npm install`
 >`npm run nodemon`
 
 ...and visit `localhost:4000` in your browser.
