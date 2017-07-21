@@ -12,7 +12,7 @@ test('passwordFilter test', function (t) {
   let expected = 'qwerty,queen';
   t.deepEqual(actual, expected, 'passwordFilter test should return a string which matches filter');
   actual = search(passwords, '12345');
-  expected = '123456,12345678,123456789,12345,1234567,1234567890';
-  t.deepEqual(actual, expected, 'passwordFilter test should work with passwords array');
+  expected = '123456,12345678,123456789,12345,1234567';
+  t.deepEqual(actual, expected, 'passwordFilter test should give the first 5 matching strings');
   t.end();
 });

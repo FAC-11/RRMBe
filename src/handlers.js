@@ -10,7 +10,6 @@ const search = require('./search');
 
 const handleFile = (request, response, fileName) => {
   const filePath = path.join(__dirname, '..', 'public', fileName);
-  console.log(filePath);
   const extension = fileName.split('.')[1];
   const extensionType = {
     html: 'text/html',
